@@ -4,8 +4,8 @@
 class Password
 {
 public:
-    Password(std::unique_ptr<abstractValidator> v =
-            std::unique_ptr<abstractValidator>(new passwordValidator()));
+    Password(std::unique_ptr<AbstractValidator> v =
+            std::unique_ptr<AbstractValidator>(new passwordValidator()));
 
     bool isPasswordValid();
     bool operator != (const Password& pass) const;
@@ -15,7 +15,7 @@ public:
 
 private:
     std::string value;
-    std::unique_ptr<abstractValidator> validator;
+    std::unique_ptr<AbstractValidator> validator;
 
 };
 
