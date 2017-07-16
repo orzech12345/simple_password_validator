@@ -1,7 +1,9 @@
 #pragma once
 
+#include "abstractValidator.hpp"
+
 class PasswordSaftyChecker : public AbstractValidator
 {
 public:
-    bool isValid(std::string s) const;
-}
+    bool isPasswordValid(std::string str) const;
+};

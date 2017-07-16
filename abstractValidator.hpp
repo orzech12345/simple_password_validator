@@ -5,7 +5,7 @@
 class AbstractValidator
 {
 public:
-    virtual bool isValid(std::string) const = 0;
+    virtual bool isPasswordValid(std::string) const = 0;
     virtual ~AbstractValidator() = default;
 };
 

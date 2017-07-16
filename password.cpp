@@ -1,15 +1,15 @@
 #include "password.hpp"
 
-Password::Password(std::unique_ptr<abstractValidator> v) : validator(v) {}
+Password::Password(std::shared_ptr<AbstractValidator> v) : validator(v) {}
 
 bool Password::isPasswordValid()
 {
     return validator->isPasswordValid(value);
 }
 
-void Password::setValue(std::string v)
+void Password::setValue(std::string value)
 {
-    value = v;
+    value = value;
 }
 
 bool Password::operator != (const Password& pass) const
@@ -19,5 +19,5 @@ bool Password::operator != (const Password& pass) const
 
 bool Password::operator == (const Password& pass) const
 {
-    return operator == pass.value;
+    return value == pass.value;
 }
