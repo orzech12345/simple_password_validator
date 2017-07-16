@@ -14,7 +14,7 @@ void Password::setValue(std::string v)
 
 bool Password::operator != (const Password& pass) const
 {
-    return !operator == (rhs);
+    return !operator == (pass);
 }
 
 bool Password::operator == (const Password& pass) const
