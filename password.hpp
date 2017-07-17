@@ -11,8 +11,8 @@ public:
             std::shared_ptr<AbstractValidator>(new PasswordSaftyChecker()));
 
     bool isPasswordValid();
-    bool operator != (const Password& pass) const;
-    bool operator == (const Password& pass) const;
+    bool operator!=(const Password& pass) const;
+    bool operator==(const Password& pass) const;
 
     void setValue(std::string value);
 

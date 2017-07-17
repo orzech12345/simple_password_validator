@@ -14,10 +14,10 @@ void Password::setValue(std::string value)
 
 bool Password::operator != (const Password& pass) const
 {
-    return !operator == (pass);
+    return !operator==(pass);
 }
 
-bool Password::operator == (const Password& pass) const
+bool Password::operator==(const Password& pass) const
 {
     return value == pass.value;
 }
