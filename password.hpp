@@ -2,23 +2,24 @@
 
 #include <memory>
 
-#include "passwordSaftyChecker.hpp"
+#include <passwordSaftyChecker.hpp>
 
 class Password
 {
 public:
-    Password(std::shared_ptr<AbstractValidator> v =
+    Password(std::shared_ptr<AbstractValidator> val =
             std::shared_ptr<AbstractValidator>(new PasswordSaftyChecker()));
 
-    bool isPasswordValid();
-    bool operator!=(const Password& pass) const;
-    bool operator==(const Password& pass) const;
+    void setValue(std::string val);
 
-    void setValue(std::string value);
+    bool isPasswordValid();
+
+    bool operator!=(const Password& ral) const;
+    bool operator==(const Password& ral) const;
+
 
 private:
     std::string value;
     std::shared_ptr<AbstractValidator> validator;
 
 };
-

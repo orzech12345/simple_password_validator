@@ -1,23 +1,23 @@
 #include "password.hpp"
 
-Password::Password(std::shared_ptr<AbstractValidator> v) : validator(v) {}
+Password::Password(std::shared_ptr<AbstractValidator> val) : validator(val) {}
 
 bool Password::isPasswordValid()
 {
     return validator->isPasswordValid(value);
 }
 
-void Password::setValue(std::string value)
+void Password::setValue(std::string val)
 {
-    value = value;
+    value = val;
 }
 
-bool Password::operator != (const Password& pass) const
+bool Password::operator != (const Password& ral) const
 {
-    return !operator==(pass);
+    return !operator==(ral);
 }
 
-bool Password::operator==(const Password& pass) const
+bool Password::operator==(const Password& ral) const
 {
-    return value == pass.value;
+    return value == ral.value;
 }
