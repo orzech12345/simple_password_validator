@@ -11,6 +11,17 @@ TEST_F(Sut_Password, validation_process_request_to_check_password)
     EXPECT_TRUE(sut.isPasswordValid());
 }
 
+TEST_F(Sut_Password, validation_process_request_to_decide_if_password_is_strong_or_not)
+{
+    const std::string simplePassword = "qwertyuiop";
+
+    EXPECT_CALL(*validator, isPasswordStrong(simplePassword)).Times(1).WillOnce(
+                ::testing::Return(true));
+
+    sut.setValue(simplePassword);
+    EXPECT_TRUE(sut.isPasswordStrong());
+}
+
 TEST_F(Sut_Password, should_be_easly_comparable)
 {
     const std::string firstPassword {"ASDFG!2345"};
