@@ -6,9 +6,9 @@ class PasswordSaftyChecker : public AbstractValidator
 {
 public:
     bool isPasswordValid(std::string str) const;
-private:
     bool isPasswordStrong(std::string str) const;
 
+private:
     bool tooShortPassword(std::string str) const;
     bool tooLongPassword(std::string str) const;
 

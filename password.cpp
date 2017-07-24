@@ -7,17 +7,17 @@ bool Password::isPasswordValid()
     return validator->isPasswordValid(value);
 }
 
-void Password::setValue(std::string val)
+void Password::setValue(std::string v)
 {
-    value = val;
+    value = v;
 }
 
-bool Password::operator != (const Password& ral) const
+bool Password::operator != (const Password& rval) const
 {
-    return !operator==(ral);
+    return !operator==(rval);
 }
 
-bool Password::operator==(const Password& ral) const
+bool Password::operator==(const Password& rval) const
 {
-    return value == ral.value;
+    return value == rval.value;
 }

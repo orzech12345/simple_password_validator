@@ -1,13 +1,13 @@
-#include <sut_Password.hpp>
+#include "sut_Password.hpp"
 
 TEST_F(Sut_Password, validation_process_request_to_check_password)
 {
-    const std::string simplePassword{"qwertyuiop"};
+    const std::string simplePassword = "qwertyuiop";
 
     EXPECT_CALL(*validator, isPasswordValid(simplePassword)).Times(1).WillOnce(
                 ::testing::Return(true));
 
-    sut.isPasswordValid(simplePassword);
+    sut.setValue(simplePassword);
     EXPECT_TRUE(sut.isPasswordValid());
 }
 

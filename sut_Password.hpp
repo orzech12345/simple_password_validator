@@ -11,7 +11,7 @@ public:
     {
         sut = Password(validator);
     }
-private:
+protected:
     std::shared_ptr<PasswordSaftyCheckerMock> validator;
     Password sut;
 };
